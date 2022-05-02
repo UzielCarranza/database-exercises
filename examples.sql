@@ -20,3 +20,13 @@ WHERE last_name = 'Carranza';
 SELECT *
 FROM users
 WHERE last_name LIKE 't%';
+
+
+UPDATE users
+SET middle_name = 'U'
+WHERE first_name = 'uziel';
+
+
+SELECT *
+FROM users
+WHERE first_name LIKE 'u%';
