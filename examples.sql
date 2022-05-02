@@ -27,6 +27,9 @@ SET middle_name = 'U'
 WHERE first_name = 'uziel';
 
 
-SELECT *
-FROM users
-WHERE first_name LIKE 'u%';
+
+SELECT * FROM users;
+DELETE FROM users
+WHERE first_name LIKE 't%';
+
+SELECT * FROM users
