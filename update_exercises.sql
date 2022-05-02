@@ -12,3 +12,13 @@ WHERE release_date < 1980;
 SELECT name AS 'ALL albums by Michael Jackson'
 FROM albums
 WHERE artist = 'Michael Jackson';
+
+
+
+UPDATE albums
+SET sales = sales * 10;
+
+
+SELECT sales AS 'ALL albums'
+FROM albums
+WHERE artist = 'Adele';
