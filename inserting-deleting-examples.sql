@@ -32,4 +32,6 @@ SELECT * FROM users;
 DELETE FROM users
 WHERE first_name LIKE 't%';
 
-SELECT * FROM users
+SELECT * FROM users;
+
+
