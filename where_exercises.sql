@@ -27,3 +27,8 @@ AND gender = 'M';
 SELECT last_name FROM employees
 WHERE last_name LIKE '%E'
 OR last_name LIKE 'E%';
+
+
+SELECT last_name FROM employees
+WHERE last_name LIKE '%E'
+   AND last_name LIKE 'E%';
