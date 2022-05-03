@@ -16,3 +16,9 @@ WHERE last_name LIKE '%q%';
 
 SELECT first_name FROM employees
 WHERE first_name = 'IRENA' OR first_name = 'Vidya' OR first_name = 'Maya';
+
+
+
+SELECT first_name FROM employees
+WHERE first_name IN ('Irena', 'Vidya', 'Maya')
+AND gender = 'M';
