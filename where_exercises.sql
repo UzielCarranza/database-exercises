@@ -6,3 +6,7 @@ WHERE first_name IN ('Irena', 'Vidya', 'Maya');
 
 SELECT first_name FROM employees
 WHERE last_name LIKE 'E%';
+
+
+SELECT last_name FROM employees
+WHERE last_name LIKE '%q%';
