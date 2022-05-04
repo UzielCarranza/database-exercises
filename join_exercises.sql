@@ -62,3 +62,16 @@ WHERE de.to_date LIKE '9%'
 ORDER BY dept_name;
 
 
+
+SELECT CONCAT(e.first_name, ', ', e.last_name)   AS Employee_Name,
+       dept_name                                 AS Department,
+       dm.emp_no                                 AS Manager_Employee_Number,
+       CONCAT(e2.first_name, ', ', e2.last_name) AS Manager_Full_Name
+FROM employees e
+         JOIN dept_emp de on e.emp_no = de.emp_no
+         JOIN departments d on d.dept_no = de.dept_no
+         JOIN dept_manager dm on de.dept_no = dm.dept_no
+         JOIN employees e2 on e2.emp_no = dm.emp_no
+where dm.to_date LIKE '9%'
+ORDER BY e2.first_name DESC;
+
