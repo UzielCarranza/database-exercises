@@ -73,5 +73,6 @@ FROM employees e
          JOIN dept_manager dm on de.dept_no = dm.dept_no
          JOIN employees e2 on e2.emp_no = dm.emp_no
 where dm.to_date LIKE '9%'
-ORDER BY e2.first_name DESC;
+AND de.to_date LIKE '9%'
+ORDER BY dept_name;
 
