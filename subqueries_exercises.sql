@@ -24,3 +24,24 @@ WHERE emp_no IN (
     WHERE first_name LIKE 'Aamod'
 )
 GROUP BY title;
+
+
+# Find all the current department managers that are female.
+
+
+SELECT CONCAT(e.first_name, ', ', e.last_name) AS Female_Manager
+FROM employees e
+WHERE e.gender = 'F'
+  AND e.emp_no IN (
+    SELECT dept_manager.emp_no
+    FROM dept_manager
+    WHERE to_date > curdate()
+);
+
+
+
+
+
+
+
+
