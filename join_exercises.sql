@@ -72,7 +72,7 @@ FROM employees e
          JOIN departments d on d.dept_no = de.dept_no
          JOIN dept_manager dm on de.dept_no = dm.dept_no
          JOIN employees e2 on e2.emp_no = dm.emp_no
-where dm.to_date LIKE '9%'
-AND de.to_date LIKE '9%'
+where dm.to_date > curdate()
+AND de.to_date > curdate()
 ORDER BY dept_name asc, e.emp_no;
 
