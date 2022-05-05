@@ -74,5 +74,5 @@ FROM employees e
          JOIN employees e2 on e2.emp_no = dm.emp_no
 where dm.to_date LIKE '9%'
 AND de.to_date LIKE '9%'
-ORDER BY dept_name;
+ORDER BY dept_name asc, e.emp_no;
 
