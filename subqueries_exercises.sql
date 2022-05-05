@@ -42,14 +42,32 @@ WHERE e.gender = 'F'
 # Find all the department names that currently have female managers.
 
 SELECT dept_name AS departmentds
-FROM employees e, departments
+FROM employees e,
+     departments
 WHERE e.gender = 'F'
   AND e.emp_no IN (
-    SELECT  DISTINCT dept_manager.emp_no
+    SELECT DISTINCT dept_manager.emp_no
     FROM dept_manager
     WHERE to_date > curdate()
-) GROUP BY dept_name;
+)
+GROUP BY dept_name;
 
-SELECT * FROM employees, departments
+SELECT *
+FROM employees,
+     departments
 WHERE first_name = 'Isamu'
-AND last_name = 'Legleitner'
+  AND last_name = 'Legleitner';
+
+
+#     Find the first and last name of the employee with the highest salary.
+
+SELECT e.first_name, e.last_name AS Name, salary as salary
+FROM employees e,
+     salaries
+where salary IN (
+    SELECT salary
+    FROM salaries
+    ORDER BY salaries.salary ASC
+)
+LIMIT 2;
+
