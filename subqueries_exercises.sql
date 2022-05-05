@@ -41,29 +41,15 @@ WHERE e.gender = 'F'
 
 # Find all the department names that currently have female managers.
 
-SELECT CONCAT(e.first_name, ', ', e.last_name) AS Female_Manager
-FROM employees e
+SELECT dept_name AS departmentds
+FROM employees e, departments
 WHERE e.gender = 'F'
   AND e.emp_no IN (
-    SELECT dept_manager.emp_no
+    SELECT  DISTINCT dept_manager.emp_no
     FROM dept_manager
     WHERE to_date > curdate()
-);
+) GROUP BY dept_name;
 
-
-
-SELECT d.dept_name AS department
-FROM departments d,
-     dept_manager e
-WHERE e.to_date > curdate()
-  AND e.emp_no IN (
-    SELECT em.emp_no
-    FROM employees em
-    WHERE em.gender = 'F'
-)
-GROUP BY dept_name;
-
-
-
-
-
+SELECT * FROM employees, departments
+WHERE first_name = 'Isamu'
+AND last_name = 'Legleitner'
