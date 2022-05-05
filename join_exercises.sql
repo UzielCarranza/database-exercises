@@ -74,5 +74,5 @@ FROM employees e
          JOIN employees e2 on e2.emp_no = dm.emp_no
 where dm.to_date > curdate()
 AND de.to_date > curdate()
-ORDER BY dept_name asc, e.emp_no;
+ORDER BY dept_name, e.emp_no;
 
